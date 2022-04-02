@@ -1,0 +1,14 @@
+﻿@model Ticaret.Models.Cart
+
+<div id="welcomeLine" class="row">
+    <div class="span6"> <strong> </strong></div>
+    <div class="span6">
+        <div class="pull-right">
+
+            <span class="btn btn-mini">@Model.Total().ToString("c") ₺</span>
+
+            <a href="/Cart/Index"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i>Sepetinizde @Model.Cartlines.Count Ürün Var</span> </a>
+        </div>
+    </div>
+</div>
+ 

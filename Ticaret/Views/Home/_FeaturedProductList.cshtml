@@ -1,0 +1,32 @@
+﻿@using Ticaret.Entity
+@model IEnumerable<Product>
+
+<div class="well well-small">
+    <h4>Önerilen Ürünler</h4>
+    <div class="row-fluid">
+        <div id="featured" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="item">
+                    <ul class="thumbnails">
+                        @foreach (var item in Model)
+                        {
+                        <li class="span3">
+                            <div class="thumbnail">
+                               
+                                <a href="/Home/ProductDetails/@item.Id"><img src="~/Content/image/@item.image" alt=""></a>
+                                <div class="caption">
+                                    <h5>@item.Name</h5>
+                                    <h4><a class="btn" href="/Home/ProductDetails/@item.Id">Satın Al</a> <span class="pull-right">@item.price ₺</span></h4>
+                                </div>
+                            </div>
+                        </li>
+                        }
+                        
+                    </ul>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>

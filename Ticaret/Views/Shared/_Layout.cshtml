@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <title>Tech-Market</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--Less styles -->
+   
+    <!-- Bootstrap style -->
+    <link id="callCss" rel="stylesheet" href="/tema-shop/themes/bootshop/bootstrap.min.css" media="screen" />
+    <link href="/tema-shop/themes/css/base.css" rel="stylesheet" media="screen" />
+    <!-- Bootstrap style responsive -->
+    <link href="/tema-shop/themes/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="/tema-shop/themes/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- Google-code-prettify -->
+    <link href="/tema-shop/themes/js/google-code-prettify/prettify.css" rel="stylesheet" />
+    <!-- fav and touch icons -->
+    <link rel="shortcut icon" href="/tema-shop/themes/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/tema-shop/themes/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/tema-shop/themes/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/tema-shop/themes/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/tema-shop/themes/images/ico/apple-touch-icon-57-precomposed.png">
+    <style type="text/css" id="enject"></style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            @Html.Action("Summary1", "Cart")
+            <!-- Navbar ================================================== -->
+            <div id="logoArea" class="navbar">
+                <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-inner">
+                    <a class="brand" href="/Home/Index"><img src="/tema-shop/themes/images/log.png" alt="logo" style="width:200px" /></a>
+
+                    <ul id="topMenu" class="nav pull-right">
+                        <li class=""><a href="/Home/Index"><span class="icon-home"></span> Anasayfa</a></li>
+                        <li class=""><a href="/Home/Hakkimizda">Hakkımızda</a></li>
+                        <li class=""><a href="/Home/Iletisim">İletişim</a></li>
+                        @Html.Partial("LoginPartial")
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End====================================================================== -->
+    @RenderBody()
+    <!-- Footer ================================================================== -->
+    <div id="footerSection">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <h5>Hesap</h5>
+                    <a href="login.html">Hesabım</a>
+                    <a href="login.html">Kişisel Bilgiler</a>
+                   
+                   
+                </div>
+                <div class="span3">
+                    <h5>Bilgi</h5>
+                    <a href="contact.html">İletişim</a>
+                    <a href="register.html">Kayıt</a>
+                    <a href="faq.html">SSS</a>
+                </div>
+                
+                <div id="socialMedia" class="span3 pull-right">
+                    <h5>Sosyal Medya </h5>
+                    <a href="#"><img width="40" height="40" src="/tema-shop/themes/images/facebook.png" title="facebook" alt="facebook" /></a>
+                    <a href="#"><img width="40" height="40" src="/tema-shop/themes/images/twitter.png" title="twitter" alt="twitter" /></a>
+                    <a href="#"><img width="40" height="40" src="/tema-shop/themes/images/youtube.png" title="youtube" alt="youtube" /></a>
+                </div>
+            </div>
+             
+        </div><!-- Container End -->
+    </div>
+    <!-- Placed at the end of the document so the pages load faster ============================================= -->
+    <script src="/tema-shop/themes/js/jquery.js" type="text/javascript"></script>
+    <script src="/tema-shop/themes/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/tema-shop/themes/js/google-code-prettify/prettify.js"></script>
+
+    <script src="/tema-shop/themes/js/bootshop.js"></script>
+    <script src="/tema-shop/themes/js/jquery.lightbox-0.5.js"></script>
+
+    <!-- Themes switcher section ============================================================================================= -->
+   
+  
+</body>
+</html>

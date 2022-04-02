@@ -1,0 +1,82 @@
+﻿@using Ticaret.Entity
+@model IEnumerable<Product>
+
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar ================================================== -->
+            <div id="sidebar" class="span3">
+                @Html.Action("Summary", "Cart")
+                <ul id="sideManu" class="nav nav-tabs nav-stacked">
+                    @Html.Action("_CategoryList", "Category")
+                </ul>
+                <br>
+
+                <div class="thumbnail">
+                    <img src="/tema-shop/themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
+                    <div class="caption">
+                        <h5>Payment Methods</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Sidebar end=============================================== -->
+            <div class="span9">
+               
+                <form class="form-horizontal span6">
+                    <div class="control-group">
+                        <label class="control-label alignL">Sort By </label>
+                        <select>
+                            <option>Priduct name A - Z</option>
+                            <option>Priduct name Z - A</option>
+                            <option>Priduct Stoke</option>
+                            <option>Price Lowest first</option>
+                        </select>
+                    </div>
+                    <hr class="soft">
+                </form>
+
+                <div id="myTab" class="pull-right">
+                    
+                </div>
+                <br class="clr">
+                <div class="tab-content">
+                    
+                    <div class="tab-pane  active" id="blockView">
+                        <ul class="thumbnails">
+                            
+                            @foreach (var item in Model)
+                            {
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="/Home/ProductDetails/@item.Id"><img src="~/Content/image/@item.image" alt="@item.Name"></a>
+                                        <div class="caption">
+                                            <h5>@item.Name</h5>
+                                            <p>
+                                                @item.Description
+                                            </p>
+                                            <h4 style="text-align:center"> <a class="btn" href="/Home/ProductDetails/@item.Id">Görüntüle <i class="icon-shopping-cart"></i></a> <button type="button" class="btn btn-lg btn-primary" disabled>@item.price ₺</button></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                        <hr class="soft">
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <ul>
+                        <li><a href="#">‹</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="#">›</a></li>
+                    </ul>
+                </div>
+                <br class="clr">
+            </div>
+        </div>
+    </div>
+</div>

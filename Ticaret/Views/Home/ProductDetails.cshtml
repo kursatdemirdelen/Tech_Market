@@ -1,0 +1,79 @@
+﻿@using Ticaret.Entity
+@model Product
+
+<div id="mainBody">
+        <div class="container">
+            <div class="row">
+                <div id="sidebar" class="span3">
+                    @Html.Action("Summary", "Cart")
+                    <br>
+
+                    <div class="thumbnail">
+                        <img src="/tema-shop/themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
+                        <div class="caption">
+                            <h5>Ödeme Yöntemleri</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="span9">
+                    <ul class="breadcrumb">
+                        <li><a href="/Home/Index">Anasayfa</a> <span class="divider">/</span></li>
+                        <li><a href="/Home/Product">Ürünler</a> <span class="divider">/</span></li>
+                        <li class="active">Ürün Detayı</li>
+                    </ul>
+                    <div class="row">
+                        <div id="gallery" class="span3">
+                            <a href="~/Content/image/@Model.image" title="@Model.Name" >
+                                <img src="~/Content/image/@Model.image" style="width:100%" alt="@Model.Name" />
+                            </a>
+                            <div id="differentview" class="moreOptopm carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <a href="~/Content/image/@Model.image"> <img style="width:29%" src="~/Content/image/@Model.image" alt="" /></a>
+                                        
+                                    </div>
+                                    <div class="item">
+                                        <a href="#"> <img style="width:29%" src="~/Content/image/@Model.image" alt="" /></a>
+                                        <a href="#"> <img style="width:29%" src="~/Content/image/@Model.image" alt="" /></a>
+                                        <a href="#"> <img style="width:29%" src="~/Content/image/@Model.image" alt="" /></a>
+                                    </div>
+                                </div>
+                                <!--
+                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                                -->
+                            </div>
+
+                        </div>
+                        <div class="span6">
+                            <h3>@Model.Name </h3>
+                            @using (Html.BeginForm("AddToCart", "Cart", new { @class = "form-horizontal qtyFrm" }))
+                            {
+                                 @Html.HiddenFor(i=>i.Id)
+                                    <div class="control-group">
+                                        <label class="control-label"><span>@Model.price ₺</span></label>
+                                        <div class="controls">
+                                            <input type="number" min="1" max="10" class="span1" placeholder="Adet" />
+                                            <button type="submit" class="btn btn-large btn-primary pull-right"> Sepete Ekle <i class=" icon-shopping-cart"></i></button>
+                                        </div>
+                                    </div>
+                                 }
+
+                            <hr class="soft" />
+                            <h6>Stokta @Model.Stock ürün kaldı</h6>
+
+                            <hr class="soft clr" />
+
+                            <p class="mb-sm-1"> @Model.Description </p>
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
